@@ -388,7 +388,7 @@ public class AgendaController {
 			return;
 		}
 
-		Long profissionalId = profissionalService.buscarPorUsuarioId(agendaDto.getProfissionalId()).get().getId();
+		Long profissionalId = profissionalService.buscarPorId(agendaDto.getProfissionalId()).get().getId();
 		log.info("Validando profissional id {}: ", profissionalId);
 		Optional<Profissional> profissional = this.profissionalService.buscarPorId(profissionalId);
 		if (!profissional.isPresent()) {
