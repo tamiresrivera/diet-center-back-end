@@ -208,7 +208,7 @@ public class PacienteController {
 		usuario.setEmail(pacienteDto.getEmail());
 		usuario.setTelefone(pacienteDto.getTelefone());
 		
-		if (pacienteDto.getSenha() != null || pacienteDto.getSenha() != "") {
+		if (pacienteDto.getSenha() != null && pacienteDto.getSenha() != "") {
 			usuario.setSenha(PasswordUtils.gerarBCrypt(pacienteDto.getSenha()));
 		}
 
