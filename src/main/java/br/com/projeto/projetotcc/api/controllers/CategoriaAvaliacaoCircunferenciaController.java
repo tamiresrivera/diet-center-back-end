@@ -206,7 +206,7 @@ public class CategoriaAvaliacaoCircunferenciaController {
 		categoriaAvaliacaoCircunferenciaDto.setId(Optional.of(categoriaCircunferencia.getId()));
 		categoriaAvaliacaoCircunferenciaDto.setDescricao(categoriaCircunferencia.getDescricao());
 		
-		Long profissionalId = profissionalService.buscarPorUsuarioId(categoriaCircunferencia.getProfissional().getId()).get().getId();
+		Long profissionalId = profissionalService.buscarPorId(categoriaCircunferencia.getProfissional().getId()).get().getId();
 		categoriaAvaliacaoCircunferenciaDto.setProfissionalId(profissionalId);
 
 		return categoriaAvaliacaoCircunferenciaDto;
