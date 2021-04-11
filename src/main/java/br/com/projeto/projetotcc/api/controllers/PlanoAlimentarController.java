@@ -228,10 +228,6 @@ public class PlanoAlimentarController {
 		if (!profissional.isPresent()) {
 			result.addError(new ObjectError("usuario", "Profissional não encontrado. ID inexistente."));
 		}
-		Optional<Usuario> paciente = this.usuarioService.buscarPorId(planoDto.getPacienteId());
-		if (!paciente.isPresent()) {
-			result.addError(new ObjectError("usuario", "Paciente não encontrado. ID inexistente."));
-		}
 	}
 	
 	/**
@@ -250,7 +246,7 @@ public class PlanoAlimentarController {
 		planoDto.setObservacao(plano.getObservacao());
 		planoDto.setProfissionalId(plano.getProfissional().getId());
 		planoDto.setPacienteId(plano.getPaciente().getId());
-		planoDto.setUsuarioPacienteId(plano.getPaciente().getUsuario().getId());
+		//planoDto.setUsuarioPacienteId(plano.getPaciente().getUsuario().getId());
 
 		return planoDto;
 	}
