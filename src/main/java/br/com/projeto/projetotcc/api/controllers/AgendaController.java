@@ -174,6 +174,10 @@ public class AgendaController {
 			BindingResult result) throws ParseException {
 		log.info("Adicionando horário na agenda: {}", agendaDto.toString());
 		Response<AgendaDto> response = new Response<AgendaDto>();
+		
+		Usuario usuario = this.usuarioService.buscarPorId(agendaDto.getProfissionalId()).get();
+		agendaDto.setProfissionalId(usuario.getProfissional().getId());
+		
 		validarAgenda(agendaDto, result);
 		Agenda agenda = this.converterDtoParaAgenda(agendaDto, result);
 
