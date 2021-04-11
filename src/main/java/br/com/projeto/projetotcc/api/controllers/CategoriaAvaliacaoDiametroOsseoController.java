@@ -206,7 +206,7 @@ public class CategoriaAvaliacaoDiametroOsseoController {
 		categoriaAvaliacaoDiametroOsseoDto.setId(Optional.of(categoriaAvaliacaoDiametroOsseo.getId()));
 		categoriaAvaliacaoDiametroOsseoDto.setDescricao(categoriaAvaliacaoDiametroOsseo.getDescricao());
 		
-		Long profissionalId = profissionalService.buscarPorUsuarioId(categoriaAvaliacaoDiametroOsseo.getProfissional().getId()).get().getId();
+		Long profissionalId = profissionalService.buscarPorId(categoriaAvaliacaoDiametroOsseo.getProfissional().getId()).get().getId();
 		categoriaAvaliacaoDiametroOsseoDto.setProfissionalId(profissionalId);
 
 		return categoriaAvaliacaoDiametroOsseoDto;
