@@ -143,7 +143,8 @@ public class AgendaController {
 	 */
 	@GetMapping(value = "/desmarcar/{id}")
 	public ResponseEntity<Response<AgendaDto>> removerPaciente(@PathVariable("id") Long id) {
-		log.info("Atualizando agenda: {}", id);
+		log.info("
+			 ndo agenda: {}", id);
 		Response<AgendaDto> response = new Response<AgendaDto>();
 		Optional<Agenda> a = this.agendaService.buscarPorId(id);
 
@@ -277,6 +278,10 @@ public class AgendaController {
 			@Valid @RequestBody AgendaDto agendaDto, BindingResult result) throws ParseException {
 		log.info("Atualizando agenda: {}", agendaDto.toString());
 		Response<AgendaDto> response = new Response<AgendaDto>();
+		
+		Usuario usuario = this.usuarioService.buscarPorId(agendaDto.getProfissionalId()).get();
+		agendaDto.setProfissionalId(usuario.getProfissional().getId());
+		
 		validarAgenda(agendaDto, result);
 		agendaDto.setId(id);
 		Agenda agenda = this.converterDtoParaAgenda(agendaDto, result);
