@@ -143,8 +143,7 @@ public class AgendaController {
 	 */
 	@GetMapping(value = "/desmarcar/{id}")
 	public ResponseEntity<Response<AgendaDto>> removerPaciente(@PathVariable("id") Long id) {
-		log.info("
-			 ndo agenda: {}", id);
+		log.info("Atualizando agenda: {}", id);
 		Response<AgendaDto> response = new Response<AgendaDto>();
 		Optional<Agenda> a = this.agendaService.buscarPorId(id);
 
