@@ -368,7 +368,7 @@ public class AgendaController {
 				result.addError(new ObjectError("agenda", "Agenda não encontrada."));
 			}
 		} else {
-			Profissional profissional = profissionalService.buscarPorUsuarioId(agendaDto.getProfissionalId()).get();
+			Profissional profissional = profissionalService.buscarPorId(agendaDto.getProfissionalId()).get();
 			agenda.setProfissional(profissional);
 		}
 
