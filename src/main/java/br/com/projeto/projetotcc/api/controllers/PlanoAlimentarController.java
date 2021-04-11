@@ -279,7 +279,7 @@ public class PlanoAlimentarController {
 			plano.getProfissional().setId(profissionalId);
 			
 			plano.setPaciente(new Paciente());
-			Long pacienteId = pacienteService.buscarPorUsuarioId(planoDto.getPacienteId()).get().getId();
+			Long pacienteId = pacienteService.buscarPorId(planoDto.getPacienteId()).get().getId();
 			plano.getPaciente().setId(pacienteId);
 		}
 		
