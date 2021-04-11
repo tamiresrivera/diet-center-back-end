@@ -206,7 +206,7 @@ public class CategoriaReceitaController {
 		categoriaReceitaDto.setId(Optional.of(categoriaReceita.getId()));
 		categoriaReceitaDto.setDescricao(categoriaReceita.getDescricao());
 		
-		Long profissionalId = profissionalService.buscarPorUsuarioId(categoriaReceita.getProfissional().getId()).get().getId();
+		Long profissionalId = profissionalService.buscarPorId(categoriaReceita.getProfissional().getId()).get().getId();
 		categoriaReceitaDto.setProfissionalId(profissionalId);
 
 		return categoriaReceitaDto;
