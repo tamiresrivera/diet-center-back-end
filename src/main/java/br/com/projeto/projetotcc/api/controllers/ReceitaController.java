@@ -242,7 +242,7 @@ private static final Logger log = LoggerFactory.getLogger(ReceitaController.clas
 		receitaDto.setCategoriaReceitaId(receita.getCategoriaReceita().getId());
 		receitaDto.setCategoriaReceitaDescricao(receita.getCategoriaReceita().getDescricao());
 		
-		Long profissionalId = profissionalService.buscarPorUsuarioId(receita.getProfissional().getId()).get().getId();
+		Long profissionalId = profissionalService.buscarPorId(receita.getProfissional().getId()).get().getId();
 		receitaDto.setProfissionalId(profissionalId);
 
 		return receitaDto;
