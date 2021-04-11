@@ -206,7 +206,7 @@ public class CategoriaAvaliacaoPregaController {
 		categoriaAvaliacaoPregaDto.setId(Optional.of(categoriaAvaliacaoPrega.getId()));
 		categoriaAvaliacaoPregaDto.setDescricao(categoriaAvaliacaoPrega.getDescricao());
 		
-		Long profissionalId = profissionalService.buscarPorUsuarioId(categoriaAvaliacaoPrega.getProfissional().getId()).get().getId();
+		Long profissionalId = profissionalService.buscarPorId(categoriaAvaliacaoPrega.getProfissional().getId()).get().getId();
 		categoriaAvaliacaoPregaDto.setProfissionalId(profissionalId);
 
 		return categoriaAvaliacaoPregaDto;
