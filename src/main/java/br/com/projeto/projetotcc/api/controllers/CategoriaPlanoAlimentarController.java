@@ -206,7 +206,7 @@ public class CategoriaPlanoAlimentarController {
 		categoriaPlanoAlimentarDto.setId(Optional.of(categoriaPlanoAlimentar.getId()));
 		categoriaPlanoAlimentarDto.setDescricao(categoriaPlanoAlimentar.getDescricao());
 		
-		Long profissionalId = profissionalService.buscarPorUsuarioId(categoriaPlanoAlimentar.getProfissional().getId()).get().getId();
+		Long profissionalId = profissionalService.buscarPorId(categoriaPlanoAlimentar.getProfissional().getId()).get().getId();
 		categoriaPlanoAlimentarDto.setProfissionalId(profissionalId);
 
 		return categoriaPlanoAlimentarDto;
