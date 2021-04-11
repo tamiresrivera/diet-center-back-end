@@ -169,11 +169,6 @@ public class PacienteController {
 		if (!paciente.isPresent()) {
 			result.addError(new ObjectError("paciente", "Paciente não encontrado. ID inexistente."));
 		}
-		log.info("Validando usuario id {}: ", pacienteDto.getId());
-		Optional<Usuario> usuario = this.usuarioService.buscarPorId(pacienteDto.getId());
-		if (!usuario.isPresent()) {
-			result.addError(new ObjectError("usuario", "Usuário não encontrado. ID inexistente."));
-		}
 	}
 	
 	 /* Converte uma entidade paciente para seu respectivo DTO.
